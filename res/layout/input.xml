@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <EditText
+        android:id="@+id/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/social_switch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ToggleButton
+            android:id="@+id/twitter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="Twitter"
+            android:textOn="Twitter" />
+
+        <ToggleButton
+            android:id="@+id/facebokk_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="Facebook"
+            android:textOn="Facebook" />
+
+        <TextView
+            android:id="@+id/count_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/txt_count_text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/post_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/txt_post_button" />
+
+</LinearLayout>
