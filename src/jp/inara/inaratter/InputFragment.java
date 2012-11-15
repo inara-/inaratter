@@ -33,7 +33,7 @@ import com.facebook.android.Facebook;
 import com.facebook.android.FacebookError;
 
 /**
- * ƒeƒLƒXƒg“ü—Í—p‚ÌUI‚ğ‚Á‚½Fragment
+ * ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½Í—pï¿½ï¿½UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Fragment
  * 
  * @author inara
  */
@@ -54,7 +54,7 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        // Listener‚ªActivity‚ÉÀ‘•‚³‚ê‚Ä‚¢‚é‚©Šm”F
+        // Listenerï¿½ï¿½Activityï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½mï¿½F
         try {
             mTwitterListener = (OnTwitterButtonCheckedChangeListener) activity;
         } catch (ClassCastException e) {
@@ -76,11 +76,11 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
         // Twitter
         final ToggleButton twitterButton = (ToggleButton) getActivity().findViewById(
                 R.id.twitter_button);
-        // ButtonStatus‚ğİ’è
+        // ButtonStatusï¿½ï¿½İ’ï¿½
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         twitterButton.setChecked(sp.getBoolean(MainActivity.PREF_CHECK_TWITTER, false));
 
-        // TwitterƒgƒOƒ‹ƒ{ƒ^ƒ“‚ÉƒŠƒXƒi[‚ğ“o˜^
+        // Twitterï¿½gï¿½Oï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Éƒï¿½ï¿½Xï¿½iï¿½[ï¿½ï¿½oï¿½^
         twitterButton.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -91,10 +91,10 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
         // Facebook
         final ToggleButton facebookButton = (ToggleButton) getActivity().findViewById(
                 R.id.facebokk_button);
-        // ButtonStatus‚ğİ’è
+        // ButtonStatusï¿½ï¿½İ’ï¿½
         facebookButton.setChecked(sp.getBoolean(MainActivity.PREF_CHECK_FACEBOOK, false));
 
-        // FacebookƒgƒOƒ‹ƒ{ƒ^ƒ“‚ÉƒŠƒXƒi[‚ğ“o˜^
+        // Facebookï¿½gï¿½Oï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Éƒï¿½ï¿½Xï¿½iï¿½[ï¿½ï¿½oï¿½^
         facebookButton.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -102,7 +102,7 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
             }
         });
 
-        // Post ƒ{ƒ^ƒ“‚ÉƒŠƒXƒi[‚ğ“o˜^
+        // Post ï¿½{ï¿½^ï¿½ï¿½ï¿½Éƒï¿½ï¿½Xï¿½iï¿½[ï¿½ï¿½oï¿½^
         Button postButton = (Button) getActivity().findViewById(R.id.post_button);
         postButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -118,7 +118,8 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
                 }
                 if (facebookButton.isChecked()) {
                     Log.d(LOG_TAG, "Facebook Posting");
-                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    SharedPreferences sp = PreferenceManager
+                            .getDefaultSharedPreferences(getActivity());
                     Facebook facebook = FbManager.getFbManager(sp).getFacebook();
                     String method = "POST";
                     Bundle param = new Bundle();
@@ -130,7 +131,7 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
             }
         });
 
-        // EditText‚ÉƒŠƒXƒi[‚ğ“o˜^
+        // EditTextï¿½Éƒï¿½ï¿½Xï¿½iï¿½[ï¿½ï¿½oï¿½^
         EditText editText = (EditText) getActivity().findViewById(R.id.input_text);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -152,31 +153,31 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
     }
 
     /**
-     * Twitter ToggleButton ‚Ì ƒ`ƒFƒbƒN•ÏX‚ÉActivity‚É’Ê’m‚·‚é‚½‚ß‚ÌƒŠƒXƒi[
+     * Twitter ToggleButton ï¿½ï¿½ ï¿½`ï¿½Fï¿½bï¿½Nï¿½ÏXï¿½ï¿½ï¿½ï¿½Activityï¿½É’Ê’mï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìƒï¿½ï¿½Xï¿½iï¿½[
      * 
      * @author inara
      */
     public interface OnTwitterButtonCheckedChangeListener {
         /**
-         * TwitterƒgƒOƒ‹ƒ{ƒ^ƒ“‚ÌƒŠƒXƒi[
+         * Twitterï¿½gï¿½Oï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Xï¿½iï¿½[
          * 
-         * @param buttonView CompoundButtonƒIƒuƒWƒFƒNƒg
-         * @param isChecked ƒ`ƒFƒbƒN‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+         * @param buttonView CompoundButtonï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
+         * @param isChecked ï¿½`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
          */
         public void onTwitterButtonCheckedChanged(CompoundButton buttonView, boolean isChecked);
     }
 
     /**
-     * Facebook ToggleButton‚Ìƒ`ƒFƒbƒN•ÏX‚ÉActivity‚É’Ê’m‚·‚é‚½‚ß‚ÌƒŠƒXƒi[
+     * Facebook ToggleButtonï¿½Ìƒ`ï¿½Fï¿½bï¿½Nï¿½ÏXï¿½ï¿½ï¿½ï¿½Activityï¿½É’Ê’mï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìƒï¿½ï¿½Xï¿½iï¿½[
      * 
      * @author inara
      */
     public interface OnFacebookButtonCheckedChangeListener {
         /**
-         * FacebookƒgƒOƒ‹ƒ{ƒ^ƒ“‚ÌƒŠƒXƒi[
+         * Facebookï¿½gï¿½Oï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Xï¿½iï¿½[
          * 
-         * @param buttonView {@link CompoundButton}ƒIƒuƒWƒFƒNƒg
-         * @param isChecked ƒ`ƒFƒbƒN‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+         * @param buttonView {@link CompoundButton}ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
+         * @param isChecked ï¿½`ï¿½Fï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½
          */
         public void onFacebookButtonCheckedChanged(CompoundButton buttonView, boolean isChecked);
     }
@@ -197,12 +198,12 @@ public class InputFragment extends Fragment implements LoaderCallbacks<Boolean> 
     @Override
     public void onLoadFinished(Loader<Boolean> arg0, Boolean arg1) {
         Log.d(LOG_TAG, "onLoadFinished");
-        Toast.makeText(getActivity(), "Post‚µ‚Ü‚µ‚½B", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Postï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B", Toast.LENGTH_SHORT).show();
         getActivity().finish();
     }
 
     /**
-     * Facebook‚ÌƒEƒH[ƒ‹‚Ö“Še‚·‚é‚½‚ß‚ÌƒŠƒXƒi[
+     * Facebookï¿½ÌƒEï¿½Hï¿½[ï¿½ï¿½ï¿½Ö“ï¿½ï¿½eï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìƒï¿½ï¿½Xï¿½iï¿½[
      * 
      * @author inara
      */
