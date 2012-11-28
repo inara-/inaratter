@@ -10,8 +10,6 @@ import com.facebook.android.Facebook;
  *
  */
 public class FbManager {
-    /** Facebook App ID */
-    public static final String FB_APP_ID = "135468956586356";
 
     /** Twitter トークンのPreferenceキー */
     public static final String PREF_TW_TOKEN = "token";
@@ -32,7 +30,7 @@ public class FbManager {
      * @param sp プリファレンス
      */
     private FbManager(SharedPreferences sp){
-        mFacebook = new Facebook(FB_APP_ID);
+        mFacebook = new Facebook(MainActivity.FB_APP_ID);
         String fbToken = sp.getString(PREF_FB_ACCESS_TOKEN, null);
         long fbExpires = sp.getLong(PREF_FB_ACCESS_EXPIRES, 0);
         if (fbToken != null) {

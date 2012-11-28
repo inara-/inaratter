@@ -28,20 +28,20 @@ public class MainActivity extends Activity implements
 
     // Twitter 認証用
     /** コールバックURL */
-    private static final String TW_CALLBACK = "http://blog.inara.jp";
+    private static final String TW_CALLBACK = "";
 
     /** Consumer Key */
-    public static final String TW_CONSUMER_KEY = "JbOdaTH7FKi7OOge1iptjw";
+    public static final String TW_CONSUMER_KEY = "";
 
     /** Consumer Secret */
-    public static final String TW_CONSUMER_SECRET = "8PKqXICuVSt2ivq3SMscA0NDipUrd204Nf4cDd9I";
+    public static final String TW_CONSUMER_SECRET = "";
 
     /** Twitter 認証リクエスト用の 識別キー */
     private static final int TW_REQUEST_OAUTH = 1;
 
     // Facebook 認証用
     /** Facebook App ID */
-    public static final String FB_APP_ID = "135468956586356";
+    public static final String FB_APP_ID = "";
 
     /** Twitter トークンのPreferenceキー */
     public static final String PREF_TW_TOKEN = "token";
